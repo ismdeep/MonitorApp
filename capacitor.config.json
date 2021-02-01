@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "MonitorApp",
+  "appId": "com.ismdeep.monitorapp",
+  "appName": "Monitor",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",
