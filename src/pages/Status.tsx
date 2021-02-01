@@ -1,6 +1,16 @@
 import React from 'react';
-import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import {
+    IonContent,
+    IonCard,
+    IonText,
+    IonCardContent,
+    IonCardHeader,
+    IonCardTitle,
+    IonHeader,
+    IonPage,
+    IonTitle,
+    IonToolbar
+} from '@ionic/react';
 import './Status.css';
 
 const Status: React.FC = () => {
@@ -12,12 +22,28 @@ const Status: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
-                <IonHeader collapse="condense">
-                    <IonToolbar>
-                        <IonTitle size="large">Status</IonTitle>
-                    </IonToolbar>
-                </IonHeader>
-                <ExploreContainer name="Status page"/>
+
+                <IonCard>
+                    <IonCardContent>
+                        <p>blog-subscriber.ismdeep.com</p>
+                        <p>Status: <IonText color="success">Alive (25 mins ago)</IonText></p>
+                    </IonCardContent>
+                </IonCard>
+
+                <IonCard>
+                    <IonCardContent>
+                        <p>blog-subscriber.cybart.ist</p>
+                        <p>Status: <IonText color="success">Alive (25 mins ago)</IonText></p>
+                    </IonCardContent>
+                </IonCard>
+
+                <IonCard>
+                    <IonCardContent>
+                        <p>blog-subscriber.www.yinwang.org</p>
+                        <p>Status: <IonText color="success">Alive (25 mins ago)</IonText></p>
+                    </IonCardContent>
+                </IonCard>
+
             </IonContent>
         </IonPage>
     );
