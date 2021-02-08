@@ -4,6 +4,9 @@ import {
     IonCard,
     IonText,
     IonCardContent,
+    IonCardTitle,
+    IonCardHeader,
+    IonLabel,
     IonHeader,
     IonPage,
     IonTitle,
@@ -67,7 +70,7 @@ const Status: React.FC = () => {
                 items.map(item => (
                     <IonCard key={item["key"]}>
                         <IonCardContent>
-                            <p>{item["key"]}</p>
+                            <IonLabel color="dark">{item["key"]}</IonLabel>
                             {item["is_alive"] &&
                             <p>Status: <IonText color="success">Alive ({item["ago_text"]})</IonText></p>
                             }
