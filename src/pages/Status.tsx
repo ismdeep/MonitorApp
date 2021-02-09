@@ -30,8 +30,10 @@ const Status: React.FC = () => {
             .then(res => res.json())
             .then(result => result["status_list"])
             .then((items) => {
-                setItems(items);
-                setLoaded(true);
+                setTimeout(function(){
+                    setItems(items);
+                    setLoaded(true);
+                }, 300);
             });
     }
 
