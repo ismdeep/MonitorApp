@@ -1,19 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {
     IonContent,
     IonCard,
     IonText,
     IonCardContent,
-    IonCardTitle,
-    IonCardHeader,
     IonLabel,
     IonHeader,
     IonPage,
     IonTitle,
     IonToolbar,
-    IonLoading,
-    IonRefresher,
-    IonRefresherContent
+    IonRefresher
 } from '@ionic/react';
 import './Status.css';
 import { RefresherEventDetail } from '@ionic/core';
@@ -24,23 +20,16 @@ const Status: React.FC = () => {
     const [loaded, setLoaded] = useState(false);
 
     function doRefresh(event: CustomEvent<RefresherEventDetail>) {
-        console.log("Hello");
-        event.detail.complete();
         setItems([]);
         setLoaded(false);
+        event.detail.complete();
     }
-
-
-    // useEffect(() => {
-    //
-    // }, [])
 
     if (items.length <= 0) {
         fetch("https://monitor.ismdeep.com/api/statuses?token=bbacfa66-b646-4b7c-8192-be150203eb99")
             .then(res => res.json())
             .then(result => result["status_list"])
             .then((items) => {
-                console.log(items);
                 setItems(items);
                 setLoaded(true);
             });
@@ -55,7 +44,6 @@ const Status: React.FC = () => {
             </IonHeader>
             <IonContent fullscreen>
                 <IonRefresher slot="fixed" onIonRefresh={doRefresh}>
-                    <IonRefresherContent></IonRefresherContent>
                 </IonRefresher>
 
                 {!loaded &&
